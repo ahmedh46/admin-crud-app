@@ -1,0 +1,21 @@
+tui-root {
+  header {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    gap: 800px;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    button {
+      cursor: pointer;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+  }
+}

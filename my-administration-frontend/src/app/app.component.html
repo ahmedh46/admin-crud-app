@@ -1,0 +1,15 @@
+<tui-root>
+  <header>
+    <div class="left" (click)="navigateToLogin()">
+      <tui-icon
+        icon="@tui.a-arrow-up"
+        [style.color]="'var(--tui-background-accent-1-hover)'"
+      />
+      <span tuiTitle>Ahmed's Administration app</span>
+    </div>
+    <div class="right" (click)="navigateToLogin()">
+      <button size="xs" tuiButton type="button">Simple Admin app</button>
+    </div>
+  </header>
+  <router-outlet></router-outlet>
+</tui-root>

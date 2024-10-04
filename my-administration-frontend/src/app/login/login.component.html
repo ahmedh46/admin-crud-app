@@ -1,0 +1,55 @@
+<div class="login">
+  <h1 class="tui-text_h3 tui-space_bottom-10 center">Login Portal</h1>
+
+  <div class="flex">
+    <div class="admin-users tui-space_bottom-7">
+      <h1 class="tui-text_h6">List of Admin Users</h1>
+
+      <table tuiTable class="table" [columns]="columns" *ngIf="data?.length">
+        <thead>
+          <tr tuiThGroup>
+            <th tuiTh [resizable]="true">User name</th>
+            <th tuiTh [resizable]="true">Created date</th>
+          </tr>
+        </thead>
+        <tbody tuiTbody [data]="data">
+          <tr *ngFor="let item of data" tuiTr>
+            <td tuiTd>
+              {{ item.userName }}
+            </td>
+            <td tuiTd>
+              {{ item.createdDate }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="login-form">
+      <h1 class="tui-text_h6">Enter your credentials</h1>
+
+      <form [formGroup]="loginForm">
+        <div class="login-block">
+          <tui-input class="tui-space_bottom-5" formControlName="userName">
+            Enter your username
+            <input tuiTextfieldLegacy />
+          </tui-input>
+          <tui-input formControlName="password">
+            Enter your password
+            <input tuiTextfieldLegacy type="password" />
+          </tui-input>
+        </div>
+        <button
+          class="tui-space_top-5"
+          appearance="outline"
+          tuiAppearanceMode="checked"
+          tuiButton
+          type="button"
+          (click)="login()"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

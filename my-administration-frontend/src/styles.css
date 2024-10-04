@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@taiga-ui/styles/taiga-ui-global.less';
+
+tui-loader {
+  min-inline-size: 3.5rem;
+  --tui-thickness: 0.5rem;
+}

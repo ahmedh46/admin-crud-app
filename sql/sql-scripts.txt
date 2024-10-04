@@ -1,0 +1,34 @@
+#url: jdbc:mysql://localhost:3306/my-admin-db
+
+#username: root
+
+#password: root
+
+CREATE SCHEMA `my-admin-db` ;
+
+CREATE  TABLE `my-admin-db`.`users` (
+  `user_id` INT NOT NULL AUTO_INCREMENT ,
+  `user_name` VARCHAR(100) NOT NULL ,
+  `first_name` VARCHAR(1000) NOT NULL ,
+  `middle_name` VARCHAR(1000) ,
+  `last_name` VARCHAR(1000) NOT NULL ,
+  `created_date` DATETIME NOT NULL ,
+  `password` VARCHAR(1000) NOT NULL ,
+  PRIMARY KEY (`userId`) );
+
+Delete from `my-admin-db`.`users` where userId='1';
+
+INSERT INTO `my-admin-db`.`users`
+VALUES (1,'Admin_Ahmed','Admin', 'Ahmed', 'H', now(), 'testPass');
+
+INSERT INTO `my-admin-db`.`users`
+VALUES (2,'Admin_Moe','Admin', 'Moe', 'H', now(), 'testPass');
+
+SELECT user_id, user_name, first_name, middle_name, last_name, created_date, password
+FROM `my-admin-db`.`users`;
+
+
+ALTER TABLE `my-admin-db`.`users` ADD COLUMN `password` VARCHAR(1000) NOT NULL  AFTER `created_date` ;
+
+
+
