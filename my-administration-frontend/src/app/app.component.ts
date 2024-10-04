@@ -1,9 +1,10 @@
 import { TuiButton, TuiIcon, TuiRoot } from '@taiga-ui/core';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { TuiHeader } from '@taiga-ui/layout';
+import { LoginComponent } from '@my-admin-app/login';
+import { DashboardComponent } from '@my-admin-app/dashboard';
 
 @Component({
   standalone: true,

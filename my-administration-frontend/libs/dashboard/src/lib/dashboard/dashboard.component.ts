@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserFacade } from '../store/user/user.facade';
+import { UserFacade } from '@my-admin-app/user-store';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'lib-dashboard',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dashboard.component.html',

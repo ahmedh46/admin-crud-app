@@ -6,7 +6,7 @@ import { appRoutes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { provideStore } from '@ngrx/store';
-import { userReducer } from './store/user/user.reducer';
+import { userReducer } from '@my-admin-app/user-store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 
