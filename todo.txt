@@ -2,3 +2,10 @@ todo;
 
 - add loader
 - add guard for dashboard
+- add dashboard products and also nav
+- make login and dashboard nx libs
+- add box shadow to header
+- add footer
+
+nice to have
+- loader
