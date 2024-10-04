@@ -1,7 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { UserFacade } from '@my-admin-app/user-store';
 import { Subscription } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+interface allProductResponse {
+  productId?: number;
+  name: string;
+  price?: number;
+  description?: string;
+  createdDate: string;
+  updatedBy?: string;
+}
 
 @Component({
   selector: 'lib-dashboard',
@@ -17,12 +27,31 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   subscription = new Subscription();
 
-  constructor(private userFacade: UserFacade) {}
+  data: allProductResponse[] = [];
+
+  columns = Object.keys({ name: '', description: '', price: '' });
+
+  constructor(
+    private userFacade: UserFacade,
+    private http: HttpClient,
+    private currencyPipe: CurrencyPipe
+  ) {}
 
   ngOnInit(): void {
     this.userFacade.getUserInfo().subscribe((userInfo) => {
       this.userName = userInfo.userName;
       this.firstName = userInfo.firstName;
+    });
+
+    this.http.get<allProductResponse[]>(`/products`).subscribe((products) => {
+      this.data = products.map((product) => {
+        return {
+          ...product,
+          price: Number(
+            this.currencyPipe.transform(product.price, 'CAD', 'symbol', '1.2-2')
+          ),
+        };
+      });
     });
   }
 

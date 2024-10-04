@@ -2,14 +2,20 @@
   <header>
     <div class="left" (click)="navigateToLogin()">
       <tui-icon
+        size="m"
         icon="@tui.a-arrow-up"
         [style.color]="'var(--tui-background-accent-1-hover)'"
       />
       <span tuiTitle>Ahmed's Administration app</span>
     </div>
     <div class="right" (click)="navigateToLogin()">
-      <button size="xs" tuiButton type="button">Simple Admin app</button>
+      <button size="s" tuiButton type="button">Simple Admin app</button>
     </div>
   </header>
   <router-outlet></router-outlet>
+  <footer>
+    <div class="left">
+      <span>{{ currentYear }}</span>
+    </div>
+  </footer>
 </tui-root>

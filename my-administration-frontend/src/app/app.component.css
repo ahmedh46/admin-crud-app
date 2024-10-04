@@ -1,6 +1,6 @@
 tui-root {
   header {
-    border-bottom: 1px solid lightgray;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: center;
     gap: 800px;
@@ -16,6 +16,26 @@ tui-root {
       align-items: center;
       gap: 6px;
       cursor: pointer;
+      font-weight: 400;
+      font-size: 16px;
+
+      tui-icon {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  footer {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .left {
+      margin-left: 222px;
+      font-weight: 400;
+      font-size: 16px;
     }
   }
 }

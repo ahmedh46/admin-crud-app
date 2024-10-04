@@ -23,7 +23,10 @@ import { DashboardComponent } from '@my-admin-app/dashboard';
 })
 export class AppComponent {
   constructor(private router: Router) {}
+
   title = 'my-administration-frontend';
+
+  currentYear = new Date().getFullYear();
 
   navigateToLogin() {
     this.router.navigateByUrl('/login');

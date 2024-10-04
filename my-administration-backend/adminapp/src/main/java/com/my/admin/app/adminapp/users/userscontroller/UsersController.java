@@ -1,4 +1,4 @@
-package com.my.admin.app.adminapp.userscontroller;
+package com.my.admin.app.adminapp.users.userscontroller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.my.admin.app.adminapp.userjpa.Users;
-import com.my.admin.app.adminapp.userservice.UsersService;
+import com.my.admin.app.adminapp.users.usersjpa.Users;
+import com.my.admin.app.adminapp.users.userservice.UsersService;
 import com.my.admin.app.adminapp.webmodel.UserLoginRequest;
 
 import jakarta.validation.Valid;

@@ -31,4 +31,28 @@ FROM `my-admin-db`.`users`;
 ALTER TABLE `my-admin-db`.`users` ADD COLUMN `password` VARCHAR(1000) NOT NULL  AFTER `created_date` ;
 
 
+CREATE TABLE `my-admin-db`.`products` (
+  `product_id` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(1000) NOT NULL ,
+  `price` DECIMAL(6,2) NOT NULL ,
+  `description` VARCHAR(1000) ,
+  `created_date` DATETIME NOT NULL ,
+  `created_by` INT ,
+  PRIMARY KEY (`product_id`) ,
+  FOREIGN KEY (`created_by`) REFERENCES `users`(user_id)
+);
 
+INSERT INTO `my-admin-db`.`products`
+VALUES (1, 'Iphone 16' , 956.99, 'The latest iphone model', now(), 1);
+
+select * from `my-admin-db`.`products`;
+
+ALTER TABLE `my-admin-db`.`products` DROP FOREIGN KEY `products_ibfk_1` ;
+ALTER TABLE `my-admin-db`.`products` CHANGE COLUMN `created_by` `updated_by` INT(11) NOT NULL  , 
+  ADD CONSTRAINT `products_ibfk_1`
+  FOREIGN KEY (`updated_by` )
+  REFERENCES `my-admin-db`.`users` (`user_id` );
+
+curl -i -X GET http://localhost:8080/products
+
+curl -i -X PUT -H 'Content-Type: application/json' -d "{\"userName\": \"Admin_Ahmed\", \"productName\": \"Samsung Galaxy S23\", \"productDescription\": \"Galaxy s23\", \"productPrice\": \"299.99\"}" http://localhost:8080/products

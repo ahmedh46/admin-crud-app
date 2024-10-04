@@ -1,4 +1,4 @@
-package com.my.admin.app.adminapp.userjpa;
+package com.my.admin.app.adminapp.users.usersjpa;
 
 import java.sql.Timestamp;
 
