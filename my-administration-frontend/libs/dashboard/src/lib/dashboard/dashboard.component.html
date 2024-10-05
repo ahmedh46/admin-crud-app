@@ -1,13 +1,10 @@
-<p>
-  {{ userName }}
-  {{ firstName }}
-</p>
-
-<div class="login">
-  <h1 class="tui-text_h4 tui-space_bottom-10 center">Dasboard</h1>
+<div class="dashboard">
+  <h1 class="tui-text_h4 tui-space_bottom-10 center">
+    Welcome to the Dashboard Page Ahmed
+  </h1>
 
   <div class="flex">
-    <div class="admin-users tui-space_bottom-7">
+    <div class="products tui-space_bottom-7">
       <h1 class="tui-text_h6">List of Products</h1>
 
       <table tuiTable class="table" [columns]="columns" *ngIf="data?.length">
@@ -16,6 +13,7 @@
             <th tuiTh [resizable]="true">Product name</th>
             <th tuiTh [resizable]="true">Product description</th>
             <th tuiTh [resizable]="true">Product price</th>
+            <th tuiTh [resizable]="true">Created Date</th>
           </tr>
         </thead>
         <tbody tuiTbody [data]="data">
@@ -24,10 +22,21 @@
               {{ item.name }}
             </td>
             <td tuiTd>
-              {{ item.description }}
+              <ng-container *ngIf="item.description; else update">
+                {{ item.description }}
+              </ng-container>
+              <ng-template #update>
+                <button size="s" tuiButton type="button">
+                  Update description
+                </button>
+              </ng-template>
             </td>
             <td tuiTd>
               {{ item.price }}
+            </td>
+            <td tuiTd>
+              {{ item.createdDate }}
+              <
             </td>
           </tr>
         </tbody>

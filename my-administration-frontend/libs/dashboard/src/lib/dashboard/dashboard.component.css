@@ -1,0 +1,21 @@
+.dashboard {
+  padding-top: 40px;
+
+  .center {
+    text-align: center;
+  }
+
+  .flex {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 50px;
+  }
+
+  .dashboard-block {
+    width: 354px;
+  }
+}

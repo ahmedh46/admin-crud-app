@@ -3,6 +3,11 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { UserFacade } from '@my-admin-app/user-store';
 import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { TuiButton, TuiLoader } from '@taiga-ui/core';
+import { TuiInputModule } from '@taiga-ui/legacy';
+import { TuiTable } from '@taiga-ui/addon-table';
+import { TuiBlock } from '@taiga-ui/kit';
+import { ReactiveFormsModule } from '@angular/forms';
 
 interface allProductResponse {
   productId?: number;
@@ -16,7 +21,15 @@ interface allProductResponse {
 @Component({
   selector: 'lib-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    TuiBlock,
+    TuiTable,
+    TuiInputModule,
+    TuiLoader,
+    TuiButton,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })

@@ -1,0 +1,17 @@
+Product Name,Product Price,Attribute Name,Attribute Value,Created by Admin
+iPhone 16,899.99,weight,300 grams,Admin_Ahmed
+iPhone 16,899.99,hasHeadphoneJack,yes,Admin_Ahmed
+iPhone 16,899.99,color,grey,Admin_Ahmed
+iPhone 16,899.99,color,black,Admin_Ahmed
+iPhone 16,899.99,yearReleased,2020,Admin_Ahmed
+Razor 3,999.99,NULL,NULL,Admin_Ahmed
+Samsung Galaxy Note 9,299.99,weight,550 grams,Admin_Ahmed
+Samsung Galaxy Note 9,299.99,hasHeadphoneJack,yes,Admin_Ahmed
+Samsung Galaxy Note 9,299.99,color,purple,Admin_Ahmed
+Samsung Galaxy Note 9,299.99,color,grey,Admin_Ahmed
+Samsung Galaxy S21,499.99,weight,450 grams,Admin_Ahmed
+Samsung Galaxy S21,499.99,hasHeadphoneJack,no,Admin_Ahmed
+Samsung Galaxy S21,499.99,color,beige,Admin_Ahmed
+Samsung Galaxy S23,699.99,weight,350 grams,Admin_Ahmed
+Samsung Galaxy S23,699.99,hasHeadphoneJack,no,Admin_Ahmed
+Samsung Galaxy S23,699.99,color,blue,Admin_Ahmed

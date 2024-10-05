@@ -64,18 +64,18 @@ export class LoginComponent implements OnInit {
   showLoader = true;
 
   ngOnInit() {
-    // this.http.get<allUserResponse[]>(`/users`).subscribe((users) => {
-    //   this.data = users.map((user) => {
-    //     return {
-    //       ...user,
-    //       createdDate: this.datePipe.transform(
-    //         user?.createdDate,
-    //         'mediumDate'
-    //       ) as string,
-    //     };
-    //   });
-    //   this.showLoader = false;
-    // });
+    this.http.get<allUserResponse[]>(`/users`).subscribe((users) => {
+      this.data = users.map((user) => {
+        return {
+          ...user,
+          createdDate: this.datePipe.transform(
+            user?.createdDate,
+            'mediumDate'
+          ) as string,
+        };
+      });
+      this.showLoader = false;
+    });
   }
 
   login() {

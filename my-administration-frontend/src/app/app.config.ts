@@ -4,7 +4,7 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { provideStore } from '@ngrx/store';
 import { userReducer } from '@my-admin-app/user-store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
@@ -17,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideHttpClient(),
     DatePipe,
+    CurrencyPipe,
     provideStore({ router: routerReducer, user: userReducer }),
     provideRouterStore(),
     provideStoreDevtools(),
