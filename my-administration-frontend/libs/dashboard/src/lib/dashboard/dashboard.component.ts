@@ -51,10 +51,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.userFacade.getUserInfo().subscribe((userInfo) => {
-      this.userName = userInfo.userName;
-      this.firstName = userInfo.firstName;
-    });
+    this.subscription.add(
+      this.userFacade.getUserInfo().subscribe((userInfo) => {
+        this.userName = userInfo.userName;
+        this.firstName = userInfo.firstName;
+      })
+    );
 
     this.http.get<allProductResponse[]>(`/products`).subscribe((products) => {
       this.data = products.map((product) => {
