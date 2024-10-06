@@ -1,5 +1,5 @@
 {
-  "name": "my-administration-frontend",
+  "name": "my-admin-ui",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "includedScripts": [],
   "projectType": "application",
@@ -11,7 +11,7 @@
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/my-administration-frontend",
+        "outputPath": "dist/my-admin-ui",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -65,10 +65,10 @@
       },
       "configurations": {
         "production": {
-          "buildTarget": "my-administration-frontend:build:production"
+          "buildTarget": "my-admin-ui:build:production"
         },
         "development": {
-          "buildTarget": "my-administration-frontend:build:development"
+          "buildTarget": "my-admin-ui:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "my-administration-frontend:build"
+        "buildTarget": "my-admin-ui:build"
       }
     },
     "lint": {
@@ -95,9 +95,9 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "my-administration-frontend:build",
+        "buildTarget": "my-admin-ui:build",
         "port": 4200,
-        "staticFilePath": "dist/my-administration-frontend/browser",
+        "staticFilePath": "dist/my-admin-ui/browser",
         "spa": true
       }
     }

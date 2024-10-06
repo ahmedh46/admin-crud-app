@@ -24,7 +24,7 @@ import { DashboardComponent } from '@my-admin-app/dashboard';
 export class AppComponent {
   constructor(private router: Router) {}
 
-  title = 'my-administration-frontend';
+  title = 'my-admin-ui';
 
   currentYear = new Date().getFullYear();
 

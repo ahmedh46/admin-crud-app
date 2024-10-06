@@ -15,9 +15,9 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
   });
 
-  it(`should have as title 'my-administration-frontend'`, () => {
+  it(`should have as title 'my-admin-ui'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('my-administration-frontend');
+    expect(app.title).toEqual('my-admin-ui');
   });
 });

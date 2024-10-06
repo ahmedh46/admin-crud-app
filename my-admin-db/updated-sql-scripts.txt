@@ -87,24 +87,27 @@ CREATE TABLE `my-admin-db`.`product_attribute` (
 );
 
 
-## Link between Admin user table and Product table since its a many to many relation
-## This table only gets updated when an admin user creates/updates a product in the product table
-## when an admin user creates/updates an product attribute in the product attribute table
+## This table only gets updated when an admin user performs an operation on the product, attribute, or product_attribute table
 
 CREATE TABLE `my-admin-db`.`audit_log` (
   `audit_log_id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_user_id` int(11) NOT NULL,
-  `attribute_id` int(11) NOT NULL,
+  `attribute_id` int(11),
+  `product_attribute_id` int(11),
   `product_id` int(11) NOT NULL,
+  `operation_type` varchar(10) NOT NULL,
   `created_date` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
+  `old_value` varchar(10000),
+  `new_value` varchar(10000) NOT NULL,
   PRIMARY KEY (`audit_log_id`),
   KEY `auditlog_userfk_1` (`admin_user_id`),
   CONSTRAINT `auditlog_userfk_1` FOREIGN KEY (`admin_user_id`) REFERENCES `admin_user` (`admin_user_id`),
   KEY `auditlog_productfk_1` (`product_id`),
   CONSTRAINT `auditlog_productfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   KEY `auditlog_attributefk_1` (`attribute_id`),
-  CONSTRAINT `auditlog_attributefk_1` FOREIGN KEY (`attribute_id`) REFERENCES `attribute` (`attribute_id`)
+  CONSTRAINT `auditlog_attributefk_1` FOREIGN KEY (`attribute_id`) REFERENCES `attribute` (`attribute_id`),
+  KEY `auditlog_productattributefk_1` (`product_attribute_id`),
+  CONSTRAINT `auditlog_productattributefk_1` FOREIGN KEY (`product_attribute_id`) REFERENCES `product_attribute` (`product_attribute_id`)
 );
 
 

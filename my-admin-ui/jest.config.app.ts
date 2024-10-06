@@ -1,8 +1,8 @@
 export default {
-  displayName: 'my-administration-frontend',
+  displayName: 'my-admin-ui',
   preset: './jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: './coverage/my-administration-frontend',
+  coverageDirectory: './coverage/my-admin-ui',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
