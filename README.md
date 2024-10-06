@@ -3,8 +3,8 @@
 ## Requirements
 
 - Administrator users can login to the "my-admin-ui" portal
-- After they login, they will be presented with a dashboard. This should not be able to be accessed to unauthenticated users.
-- On the dashboard, the administrator user will see a list of all the products with their corresponding product attributes (such as name, description, price, and several dynamic attributes that may be different for each product).
+- After they login, they will be presented with a dashboard. The dashboard cannot be accessed by unauthenticated users.
+- On the dashboard, the administrator user will see a list of all the products along with their corresponding product attributes (such as name, description, price, and several dynamic attributes that may be different for each product).
 - The administrator user should be able to add, update, or delete products.
 - Every product transaction should be recorded for audit log purposes
 
