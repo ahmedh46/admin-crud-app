@@ -23,12 +23,6 @@
 
 #
 
-### my-admin-db schema
-
--<img src="./assets/my-schema-without-auditlog.png">
-
-#
-
 ### my-admin-db schema with audit_log table
 
 <img src="./assets/my-schema-with-auditlog.png">
@@ -70,6 +64,12 @@ order by product.name;
 ##### NOTE: the user info has been saved into the NGRX state
 
 <img src="./assets/redux-state.png">
+
+#
+
+### my-admin-api GET product (prior to changing schema)
+
+<img src="./assets/get-products-api.png">
 
 #
 
