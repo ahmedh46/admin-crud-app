@@ -121,6 +121,6 @@ left join product_attribute
 on product.product_id = product_attribute.product_id
 left join attribute
 on attribute.attribute_id = product_attribute.attribute_id
-inner join admin_user
+cross join admin_user
 on product.created_by = admin_user.admin_user_id
 order by product.name;
