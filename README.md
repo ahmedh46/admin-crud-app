@@ -94,7 +94,7 @@ order by product.name;
 #### API
 
 - implement hashing algorithm/API so that passwords could be encrypted when saving into DB
-- implemnt Pagination so that as the products table grows, you can get the page you want
+- implement Pagination so that as the products table grows, you can get the page you want
 - implement a search for products
 - unit and integration tests
 - add comments where necessary
