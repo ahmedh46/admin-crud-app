@@ -97,6 +97,7 @@ order by product.name;
 - implement Pagination so that as the products table grows, you can get the page you want
 - implement a search for products
 - unit and integration tests
+- add logging implementation
 - add comments where necessary
 - finish full implementation
 
