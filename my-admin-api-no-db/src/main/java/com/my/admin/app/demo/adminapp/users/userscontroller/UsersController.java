@@ -22,8 +22,8 @@ public class UsersController {
 
     @PostMapping("/users")
     Users login(@RequestBody @Valid UserLoginRequest userLoginRequest) {
-        return usersService.getUserByUserNameAndPassword(userLoginRequest.getUserName(),
-                userLoginRequest.getPassword());
+        return usersService.getUserByUserNameAndPassword(userLoginRequest.userName(),
+                userLoginRequest.password());
     }
 
     @GetMapping("/users")

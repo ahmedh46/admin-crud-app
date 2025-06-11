@@ -7,7 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoAdminappApplication {
 
 	public static void main(String[] args) {
+		running();
 		SpringApplication.run(DemoAdminappApplication.class, args);
+	}
+
+	private static void running() {
+		// use logger instead of System.out.println in production code
+		// logger.info("Running");
+		System.out.println("Running");
 	}
 
 }
