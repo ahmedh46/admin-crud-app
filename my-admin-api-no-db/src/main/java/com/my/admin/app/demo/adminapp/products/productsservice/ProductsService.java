@@ -43,18 +43,65 @@ public class ProductsService {
 
     public List<Products> findAll() {
         Products product1 = new Products();
-        
+
         product1.setName("Mock Product 1");
         product1.setDescription("Description for Mock Product 1");
-       
 
         Products product2 = new Products();
-       
+
         product2.setName("Mock Product 2");
         product2.setDescription("Description for Mock Product 2");
-       
 
         return List.of(product1, product2);
-       // return (List<Products>) productsRepository.findAll();
+        // return (List<Products>) productsRepository.findAll();
     }
+
+    // Example: Call two APIs asynchronously and combine their results
+    // Requires: import java.util.concurrent.CompletableFuture;
+
+    // public CompletableFuture<String> callTwoApisAsync(String url1, String url2) {
+    // CompletableFuture<String> api1Future = CompletableFuture.supplyAsync(() ->
+    // callExternalApiWithRestTemplate(url1));
+    // CompletableFuture<String> api2Future = CompletableFuture.supplyAsync(() ->
+    // callExternalApiWithRestTemplate(url2));
+
+    // return api1Future.thenCombine(api2Future, (result1, result2) -> {
+    // // Combine the results as needed
+    // return "API1: " + result1 + ", API2: " + result2;
+    // });
+    // }
+    // Requires: import reactor.core.publisher.Flux; import
+    // reactor.core.publisher.Mono;
+
+    // public String callExternalApiWithRestTemplate(String url) {
+    // RestTemplate restTemplate = new RestTemplate();
+    // ResponseEntity<String> response = restTemplate.getForEntity(url,
+    // String.class);
+    // return response.getBody();
+    // }
+
+    // .callExternalApiWithWebClientNonBlocking("https://api.example.com")
+    // .subscribe(response -> {
+    // // Handle the response here
+    // System.out.println("API Response: " + response);
+    // });
+    // Non-blocking example using WebClient (returns Mono<String>)
+    // public reactor.core.publisher.Mono<String>
+    // callExternalApiWithWebClientNonBlocking(String url) {
+    // WebClient webClient = WebClient.create();
+    // return webClient.get()
+    // .uri(url)
+    // .retrieve()
+    // .bodyToMono(String.class);
+    // }
+
+    // Blocking example using WebClient (waits for response)
+    // public String callExternalApiWithWebClient(String url) {
+    // WebClient webClient = WebClient.create();
+    // return webClient.get()
+    // .uri(url)
+    // .retrieve()
+    // .bodyToMono(String.class)
+    // .block();
+    // }
 }
