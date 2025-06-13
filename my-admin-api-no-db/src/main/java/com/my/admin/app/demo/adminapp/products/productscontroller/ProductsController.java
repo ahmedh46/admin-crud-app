@@ -3,11 +3,13 @@ package com.my.admin.app.demo.adminapp.products.productscontroller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.my.admin.app.demo.adminapp.exceptions.MyCustomException;
 import com.my.admin.app.demo.adminapp.products.productsjpa.Products;
 import com.my.admin.app.demo.adminapp.products.productsservice.ProductsService;
 import com.my.admin.app.demo.adminapp.webmodel.UpdateProductRequest;
@@ -28,6 +30,11 @@ public class ProductsController {
     @GetMapping("/products")
     List<Products> getProducts() {
         return productsService.findAll();
+    }
+
+    @GetMapping("/exception")
+    ResponseEntity<Object> testException() {
+        throw new MyCustomException("testing exception", 500, null);
     }
 
 }
