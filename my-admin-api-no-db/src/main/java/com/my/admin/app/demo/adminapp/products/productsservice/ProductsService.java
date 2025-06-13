@@ -2,9 +2,6 @@ package com.my.admin.app.demo.adminapp.products.productsservice;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.my.admin.app.demo.adminapp.products.productsjpa.Products;
@@ -16,11 +13,19 @@ import com.my.admin.app.demo.adminapp.webmodel.UpdateProductRequest;
 @Service
 public class ProductsService {
 
-    @Autowired
-    ProductsRepository productsRepository;
+    private final ProductsRepository productsRepository;
+    private final UsersRepository usersRepository;
 
-    @Autowired
-    UsersRepository usersRepository;
+    public ProductsService(ProductsRepository productsRepository, UsersRepository usersRepository) {
+        this.productsRepository = productsRepository;
+        this.usersRepository = usersRepository;
+    }
+
+    // @Autowired
+    // ProductsRepository productsRepository;
+
+    // @Autowired
+    // UsersRepository usersRepository;
 
     public Products updateProduct(String userName, UpdateProductRequest updateProductRequest) {
         Users user = usersRepository.findByUserName(userName);
